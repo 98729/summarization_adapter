@@ -1,0 +1,4 @@
+rouge1: 0.2131
+rouge2: 0.0871
+rougeL: 0.1557
+rougeLsum: 0.1767
