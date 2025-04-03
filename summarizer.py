@@ -131,7 +131,7 @@ def train(dataset, save_path):
     model.save_pretrained(save_path)
     tokenizer.save_pretrained(save_path)
 
-def test(dataset, metric, save_path, num_samples=1, zeroshot=False):
+def test(dataset, save_path, num_samples=1, zeroshot=False):
     if os.path.exists(f"summaries/{save_path}.json"):
         with open(f"summaries/{save_path}.json", "r") as f:
             summaries = json.load(f)
@@ -177,9 +177,9 @@ if __name__ == "__main__":
     # load cnn_dailymail
     # train_subset = load_from_disk("/local3/cui54/summarization_adapter/cnn_dailymail_subset/train")
     test_subset = load_from_disk("/local3/cui54/summarization_adapter/cnn_dailymail_test")
-    test(test_subset, "rouge", "zeroshot", zeroshot=True)
-    test(test_subset, "bertscore", "zeroshot", zeroshot=True)
-    # test(test_subset, "rouge", "incontext_rougescore.txt")
-    # test(test_subset, "bertscore", "incontext_bertscore.txt")
+    # test(test_subset, "zeroshot", zeroshot=True)
+    # test(test_subset, "zeroshot", zeroshot=True)
+    test(test_subset, "fewshot")
+    test(test_subset, "fewshot")
 
     # train(train_subset, "Qwen2.5-3B_b4_t2")

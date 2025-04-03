@@ -36,7 +36,7 @@ def test(dataset, save_path):
         reference_summaries = summaries["reference_summaries"]
     else:
         device = "cuda:0" if torch.cuda.is_available() else "cpu"
-        model_name = "cui54/qwen2.5-3b_b4_t2_LR_1e-5"
+        model_name = "cui54/qwen2.5-3b_b8_t2_LR_1e-5_4000"
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForCausalLM.from_pretrained(model_name).to(device)
         generated_summaries = []
@@ -68,5 +68,5 @@ def test(dataset, save_path):
 
 
 if __name__ == "__main__":
-    test_subset = load_from_disk("/local3/cui54/summarization_adapter/cnn_dailymail_subset/test")
-    test(test_subset, "Qwen2.5-3B_b4_t2_1000")
+    test_subset = load_from_disk("/local3/cui54/summarization_adapter/cnn_dailymail_test")
+    test(test_subset, "Qwen2.5-3B_b8_t2_4000")
