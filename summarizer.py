@@ -131,7 +131,7 @@ def train(dataset, save_path):
     model.save_pretrained(save_path)
     tokenizer.save_pretrained(save_path)
 
-def test(dataset, metric, save_path, num_samples=1, zeroshot=False):
+def test(dataset, save_path, num_samples=1, zeroshot=False):
     if os.path.exists(f"summaries/{save_path}.json"):
         with open(f"summaries/{save_path}.json", "r") as f:
             summaries = json.load(f)

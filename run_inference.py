@@ -72,4 +72,4 @@ def test(dataset, save_path):
 
 if __name__ == "__main__":
     test_subset = load_from_disk("/local3/cui54/summarization_adapter/cnn_dailymail_test")
-    test(test_subset, "Qwen2.5-3B_b16_t2_8000_lora")
+    test(test_subset, "Qwen2.5-3B_b4_t2_1000")
