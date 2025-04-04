@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=4,5 ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml scripts/run_sft.py recipes/summarize/sft/config_qlora.yaml --report_to=wandb

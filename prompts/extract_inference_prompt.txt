@@ -1,0 +1,5 @@
+You are an AI assistant. Given a document, your task is to extract key phrases that represent the most important concepts, entities, or facts in the text. 
+To be successful, the extracted phrases SHOULD:
+1. Help identify important sentences that are useful for summarization. 
+2. Be extracted directly from the document
+3. Be concise yet meaningful (up to 10 words), and there should be no more than 10 phrases total.

@@ -25,18 +25,21 @@ def summarize(document, model, tokenizer):
     output = tokenizer.decode(output_ids[0], skip_special_tokens=True).strip()
     # print(output)
     output = output.split(document)[1].strip()
-    output = output.split("user\nDocument:")[0].strip().split("Summary:")[1].strip()
+    if "Document:" in output:
+        output = output.split("Document:")[0].strip()
+    if "Summary:" in output:
+        output = output.split("Summary:")[1].strip()
     return output
 
 def test(dataset, save_path):
-    if os.path.exists("summaries.json"):
-        with open("summaries.json", "r") as f:
+    if os.path.exists(f"summaries/{save_path}.json"):
+        with open(f"summaries/{save_path}.json", "r") as f:
             summaries = json.load(f)
         generated_summaries = summaries["generated_summaries"]
         reference_summaries = summaries["reference_summaries"]
     else:
         device = "cuda:0" if torch.cuda.is_available() else "cpu"
-        model_name = "cui54/qwen2.5-3b_b4_t2_LR_1e-5"
+        model_name = "cui54/qwen2.5-3b_b16_t2_LR_1e-5_8000_lora"
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForCausalLM.from_pretrained(model_name).to(device)
         generated_summaries = []
@@ -68,5 +71,5 @@ def test(dataset, save_path):
 
 
 if __name__ == "__main__":
-    test_subset = load_from_disk("/local3/cui54/summarization_adapter/cnn_dailymail_subset/test")
-    test(test_subset, "Qwen2.5-3B_b4_t2_1000")
+    test_subset = load_from_disk("/local3/cui54/summarization_adapter/cnn_dailymail_test")
+    test(test_subset, "Qwen2.5-3B_b16_t2_8000_lora")

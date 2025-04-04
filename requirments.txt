@@ -8,3 +8,4 @@ rouge_score
 nltk
 absl-py
 wandb
+openai
