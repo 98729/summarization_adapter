@@ -1,0 +1,3 @@
+BERTScore precision: 0.6341
+BERTScore recall: 0.6714
+BERTScore F1: 0.6508
