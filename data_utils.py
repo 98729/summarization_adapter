@@ -140,4 +140,5 @@ if __name__ == "__main__":
     # dev_split.save_to_disk("/local3/cui54/summarization_adapter/cnn_dailymail_subset/dev")
 
     # prepare_dataset(train_subset, "summarization_data")
-    prepare_extract_dataset(train_subset, "summarization_data")
+    # prepare_extract_dataset(train_subset, "summarization_data")
+    prepare_summary_dataset(train_subset, "summarization_data")
