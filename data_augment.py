@@ -52,4 +52,4 @@ def add_phrases(datapath):
 
 
 if __name__ == "__main__":
-    add_phrases("cnn_dailymail_1000")
+    add_phrases("cnn_dailymail_4000")
