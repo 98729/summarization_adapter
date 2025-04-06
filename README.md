@@ -1,5 +1,8 @@
 # summarization_adapter
 
+Metrics
+ROUGE and BERTScore are built in inference scripts
+
 Datasets
 Training Set: cnn_dailymail_1000_augment
 Test Set: cnn_dailymail_test
