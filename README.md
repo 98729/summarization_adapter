@@ -1,11 +1,11 @@
 # summarization_adapter
 
 Datasets
-
 Training Set: cnn_dailymail_1000_augment
 Test Set: cnn_dailymail_test
-Evaluation Scripts
 
+
+Evaluation Scripts
 Baseline Model:
 Run summarizer.py to evaluate the baseline summarization model.
 Raw Dataset Model:
